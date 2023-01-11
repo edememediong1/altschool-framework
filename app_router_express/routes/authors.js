@@ -59,6 +59,7 @@ authorRouter.put('/:id', (req, res) => {
 
 authorRouter.delete('/:id', (req, res) => {
     const id = req.params.id
+    
     const index = authors.findIndex(author => author.id == id)
     if (index == -1) {
         res.status(404).end("author not found")

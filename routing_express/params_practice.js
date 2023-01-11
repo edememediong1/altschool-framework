@@ -93,6 +93,10 @@ app.post("/profile", (req, res)=>{
     res.send(`The name is ${name} and the age is ${age}`)
 })
 
+app.get("*", (req, res)=>{
+    res.status(401).send("Page not found")
+})
+
 app.listen(PORT, ()=>{
     console.log(`Server running at localhost:${PORT}`)
     
