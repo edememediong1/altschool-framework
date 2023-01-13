@@ -1,6 +1,6 @@
 const express = require("express")
 
-const bookRouter = express.Router()
+const booksRouter = express.Router()
 
 const books = [
     {
@@ -70,4 +70,4 @@ booksRouter.delete("/:id", (req, res)=>{
 })
 
 
-modules.exports = booksRouter
+module.exports = booksRouter

@@ -1,4 +1,4 @@
-const express = require("require")
+const express = require("express")
 
 const authorRouter= express.Router()
 
@@ -34,6 +34,13 @@ authorRouter.get("/:id", (req, res) => {
     res.json(author)
 })
 
+authorRouter.post("/" , (req, res) =>{
+    const body = req.body
+    authors.push(body)
+    res.json(authors)
+
+})
+
 authorRouter.put("/:id", (req, res) => {
     const id = req.params.id
     const author= req.body 
@@ -41,7 +48,6 @@ authorRouter.put("/:id", (req, res) => {
 
     if(index == -1){
         res.status(404).end("author not found")
-        return
     }
 
     authors[index] = author
